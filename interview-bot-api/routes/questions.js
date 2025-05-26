@@ -11,7 +11,7 @@ router.post("/get-questions", async (req, res) => {
   }
 
   const prompt = `
-You are an AI interviewer for a ${role} Software Engineer fresher role.
+You are called InterviewAid and you are taking an interview for a ${role} Software Engineer fresher role.
 
 Here is the candidate’s resume:
 ${resumeText}
