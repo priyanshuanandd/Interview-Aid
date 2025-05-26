@@ -5,12 +5,20 @@ const cors = require("cors");
 const resumeRoutes = require("./routes/resume");
 const questionRoutes = require("./routes/questions");
 const feedbackRoutes = require("./routes/feedback");
-
+const corsOptions = {
+  origin: [
+    "http://localhost:5173", // Allow local development
+    "https://your-frontend-production-url.com", // Add your production frontend URL if applicable
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Specify allowed headers
+  credentials: true, // Allow cookies or auth headers if needed
+};
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.options("*", cors(corsOptions)); // Handle preflight requests for all routes
+app.use(cors(corsOptions)); // Handle preflight requests for all routes
 app.use("/api", resumeRoutes);
 app.use("/api", questionRoutes);
 app.use("/api", feedbackRoutes);
