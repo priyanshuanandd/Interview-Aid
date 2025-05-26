@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
-    "build": "mkdir -p dist && cp -r *.js *.json *.md dist/ 2>/dev/null || true"
+    "dev": "nodemon server.js"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
