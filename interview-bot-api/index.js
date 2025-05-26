@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.options("*", cors(corsOptions)); // Handle preflight requests for all routes
 app.use("/api", resumeRoutes);
 app.use("/api", questionRoutes);
 app.use("/api", feedbackRoutes);
