@@ -56,7 +56,7 @@ def get_questions_from_resume(resume_text: str, role: str, difficulty: str) -> l
         f"Here is the candidate's resume:\n{resume_text}\n\n"
         f"Ask 10 {difficulty}-level interview questions (both technical and behavioral). "
         "Customize the questions based on the candidate’s resume and the role. "
-        "Number the questions clearly in a list.Just output the questions and ask an additional first question for introducing himself and also introduce yourself before that"
+        "Number the questions clearly in a list.Just output the questions and the first question for introducing himself and also introduce yourself before that"
     )
     response = model.generate_content(prompt)
     questions = [line.strip() for line in response.text.split('\n') if line.strip()]
