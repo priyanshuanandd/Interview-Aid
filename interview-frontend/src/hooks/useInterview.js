@@ -88,7 +88,7 @@ export default function useInterview() {
       if (!interviewComplete) return;
       try {
         setLoadingFeedback(true);
-        const res = await axios.post(`${{backendUrl}}/api/final-feedback`, {
+        const res = await axios.post(`${backendUrl}/api/final-feedback`, {
           questionsAndAnswers: userAnswers,
           resumeText,
         });
