@@ -4,7 +4,7 @@ import useSpeechRecognition from "../hooks/useSpeechRecognition";
 function ChatInput({ onSend }) {
   const [input, setInput] = useState("");
 
-  const { listening, startListening, stopListening } = useSpeechRecognition((text) => {
+  const { listening, startListening, stopListening, resetTranscript} = useSpeechRecognition((text) => {
     setInput(text);
   });
 
@@ -12,6 +12,8 @@ function ChatInput({ onSend }) {
     if (input.trim()) {
       onSend(input.trim());
       setInput("");
+      stopListening();
+      resetTranscript();
     }
   };
 

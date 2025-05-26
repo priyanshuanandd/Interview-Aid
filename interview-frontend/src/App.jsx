@@ -164,7 +164,7 @@ function App() {
               Waiting for questions to load...
             </p>
           )}
-          <footer className="text-center text-sm text-gray-600">
+          {/* <footer className="text-center text-sm text-gray-600">
             Made with ❤️ by{" "}
             <a
               href="https://priyanshuanand.vercel.app"
@@ -174,7 +174,7 @@ function App() {
             >
               Priyanshu Anand
             </a>
-          </footer>
+          </footer> */}
         </section>
 
         {/* --- PAGE 2: Feedback Section --- */}
@@ -197,7 +197,7 @@ function App() {
               </>
             )}
           </div>
-          <footer className="text-center text-sm text-gray-600">
+          {/* <footer className="text-center text-sm text-gray-600">
             Made with ❤️ by{" "}
             <a
               href="https://priyanshuanand.vercel.app"
@@ -207,7 +207,7 @@ function App() {
             >
               Priyanshu Anand
             </a>
-          </footer>
+          </footer> */}
         </section>
 
         {/* --- PAGE 3: Footer Section --- */}

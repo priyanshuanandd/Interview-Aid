@@ -4,6 +4,9 @@ export default function useSpeechRecognition(onResult) {
   const [listening, setListening] = useState(false);
   const recognitionRef = useRef(null);
   const finalTranscriptRef = useRef(""); // keep track of final speech
+  const resetTranscript = () => {
+    finalTranscriptRef.current = "";
+  };
 
   useEffect(() => {
     const SpeechRecognition =
@@ -78,5 +81,5 @@ export default function useSpeechRecognition(onResult) {
     setListening(false);
   }, []);
 
-  return { listening, startListening, stopListening };
+  return { listening, startListening, stopListening ,resetTranscript};
 }
