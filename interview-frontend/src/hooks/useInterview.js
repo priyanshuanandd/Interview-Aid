@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 export default function useInterview() {
   const [resumeText, setResumeText] = useState("");
   const [uploading, setUploading] = useState(false);
@@ -23,7 +23,7 @@ export default function useInterview() {
     formData.append("resume", file);
     try {
       setUploading(true);
-      const res = await axios.post(`${BACKEND_URL}/api/upload-resume`, formData, {
+      const res = await axios.post(`${backendUrl}/api/upload-resume`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       if (res.data.success) {
@@ -43,7 +43,7 @@ export default function useInterview() {
     if (!resumeText) return alert("Please upload a resume first.");
     try {
       setLoadingQuestions(true);
-      const res = await axios.post(`${BACKEND_URL}/api/get-questions`, {
+      const res = await axios.post(`${{backendUrl}}/api/get-questions`, {
         resumeText,
         role,
         difficulty,
@@ -88,7 +88,7 @@ export default function useInterview() {
       if (!interviewComplete) return;
       try {
         setLoadingFeedback(true);
-        const res = await axios.post(`${BACKEND_URL}/api/final-feedback`, {
+        const res = await axios.post(`${{backendUrl}}/api/final-feedback`, {
           questionsAndAnswers: userAnswers,
           resumeText,
         });

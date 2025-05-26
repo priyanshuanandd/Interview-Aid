@@ -6,6 +6,7 @@ import QuestionDisplay from "./components/QuestionDisplay";
 import FeedbackPanel from "./components/FeedbackPanel";
 
 import useInterview from "./hooks/useInterview";
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function App() {
   const {
@@ -61,7 +62,7 @@ function App() {
         {/* --- PAGE 0: Header + Setup Section --- */}
         <section className="h-screen w-full flex flex-col gap-4 px-4 py-6 justify-center">
           <h1 className="text-5xl font-extrabold tracking-wide mb-6 text-green-600 drop-shadow-md text-center">
-            Interview Q&A Bot
+            Interview Aid
           </h1>
 
           <UploadResume onUpload={uploadingResume} />

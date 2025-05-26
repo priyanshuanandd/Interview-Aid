@@ -9,6 +9,7 @@ const feedbackRoutes = require("./routes/feedback");
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", resumeRoutes);
 app.use("/api", questionRoutes);
