@@ -118,6 +118,17 @@ function App() {
               </button>
             </>
           )}
+          <footer className="text-center text-sm text-gray-600">
+            Made with ❤️ by{" "}
+            <a
+              href="https://priyanshuanand.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              Priyanshu Anand
+            </a>
+          </footer>
         </section>
 
         {/* --- PAGE 1: Interview Section --- */}
@@ -152,6 +163,17 @@ function App() {
               Waiting for questions to load...
             </p>
           )}
+          <footer className="text-center text-sm text-gray-600">
+            Made with ❤️ by{" "}
+            <a
+              href="https://priyanshuanand.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              Priyanshu Anand
+            </a>
+          </footer>
         </section>
 
         {/* --- PAGE 2: Feedback Section --- */}
@@ -174,6 +196,17 @@ function App() {
               </>
             )}
           </div>
+          <footer className="text-center text-sm text-gray-600">
+            Made with ❤️ by{" "}
+            <a
+              href="https://priyanshuanand.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              Priyanshu Anand
+            </a>
+          </footer>
         </section>
 
         {/* --- PAGE 3: Footer Section --- */}

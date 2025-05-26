@@ -23,7 +23,7 @@ export default function useInterview() {
     formData.append("resume", file);
     try {
       setUploading(true);
-      const res = await axios.post("http://localhost:5000/api/upload-resume", formData, {
+      const res = await axios.post(`${BACKEND_URL}/api/upload-resume`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       if (res.data.success) {
@@ -43,7 +43,7 @@ export default function useInterview() {
     if (!resumeText) return alert("Please upload a resume first.");
     try {
       setLoadingQuestions(true);
-      const res = await axios.post("http://localhost:5000/api/get-questions", {
+      const res = await axios.post(`${BACKEND_URL}/api/get-questions`, {
         resumeText,
         role,
         difficulty,
@@ -88,7 +88,7 @@ export default function useInterview() {
       if (!interviewComplete) return;
       try {
         setLoadingFeedback(true);
-        const res = await axios.post("http://localhost:5000/api/final-feedback", {
+        const res = await axios.post(`${BACKEND_URL}/api/final-feedback`, {
           questionsAndAnswers: userAnswers,
           resumeText,
         });
