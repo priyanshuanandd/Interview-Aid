@@ -43,7 +43,7 @@ export default function useInterview() {
     if (!resumeText) return alert("Please upload a resume first.");
     try {
       setLoadingQuestions(true);
-      const res = await axios.post(`${{backendUrl}}/api/get-questions`, {
+      const res = await axios.post(`${backendUrl}/api/get-questions`, {
         resumeText,
         role,
         difficulty,
