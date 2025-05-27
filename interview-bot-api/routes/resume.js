@@ -1,7 +1,7 @@
 const express = require("express");
 const multer = require("multer");
 const pdfParse = require("pdf-parse");
-const Resume = require("../models/resume"); // Mongoose model
+const Resume = require("../models/Resume");
 
 const router = express.Router();
 const storage = multer.memoryStorage();
@@ -13,22 +13,19 @@ router.post("/upload-resume", upload.single("resume"), async (req, res) => {
     const data = await pdfParse(fileBuffer);
     const extractedText = data.text.trim();
 
-    // ✅ Immediately respond to the client
+    // ✅ Send response immediately
     res.json({ success: true, resumeText: extractedText });
 
-    // ✅ Background save to DB (silent if error occurs)
+    // ✅ Save to DB in background (non-blocking)
     Resume.create({
       filename: req.file.originalname,
       text: extractedText,
-      uploadedAt: new Date(),
-    }).catch(() => {
-      // Error is ignored silently as per request
+    }).catch((err) => {
+      console.error("Error saving resume to DB (non-blocking):", err);
     });
 
-  } catch {
-    // ❌ Even if resume parsing fails, respond with a generic success response
-    res.json({ success: false, resumeText: "" });
+  } catch (error) {
+    console.error("Resume upload error:", error);
+    return res.status(500).json({ success: false, message: "Failed to parse resume" });
   }
 });
-
-module.exports = router;
