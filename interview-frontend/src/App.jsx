@@ -120,7 +120,7 @@ function App() {
             </>
           )}
           <footer className="text-center text-sm text-gray-600">
-            Made with ❤️ by{" "}
+            Made by{" "}
             <a
               href="https://priyanshuanand.vercel.app"
               target="_blank"
