@@ -39,9 +39,9 @@ Transcript:\n`;
   prompt += `
 Generate the output as:
 {
-  "technical": 6,
-  "behavioral": 4,
-  "communication": 3
+  "technical": integer between 1 to 10,
+  "behavioral": integer between 1 to 10,
+  "communication": integer between 1 to 10
 }
 ---FEEDBACK---
 ## Title...

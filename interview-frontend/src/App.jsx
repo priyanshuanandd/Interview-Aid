@@ -164,17 +164,6 @@ function App() {
               Waiting for questions to load...
             </p>
           )}
-          {/* <footer className="text-center text-sm text-gray-600">
-            Made with ❤️ by{" "}
-            <a
-              href="https://priyanshuanand.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
-            >
-              Priyanshu Anand
-            </a>
-          </footer> */}
         </section>
 
         {/* --- PAGE 2: Feedback Section --- */}
@@ -197,23 +186,12 @@ function App() {
               </>
             )}
           </div>
-          {/* <footer className="text-center text-sm text-gray-600">
-            Made with ❤️ by{" "}
-            <a
-              href="https://priyanshuanand.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
-            >
-              Priyanshu Anand
-            </a>
-          </footer> */}
         </section>
 
         {/* --- PAGE 3: Footer Section --- */}
         <section className="h-screen w-full flex items-center justify-center px-4">
           <footer className="text-center text-sm text-gray-600">
-            Made with ❤️ by{" "}
+            Made by{" "}
             <a
               href="https://priyanshuanand.vercel.app"
               target="_blank"
