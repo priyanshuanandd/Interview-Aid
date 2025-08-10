@@ -52,7 +52,7 @@ def extract_resume_text(file_path: str) -> str:
 # ------------------------- Question Generation ------------------------------
 def get_questions_from_resume(resume_text: str, role: str, difficulty: str) -> list:
     prompt = (
-        f"You are an AI interviewer for a {role} Software Engineer role.\n\n"
+        f"You are an AI interviewer for a {role} role.\n\n"
         f"Here is the candidate's resume:\n{resume_text}\n\n"
         f"Ask 10 {difficulty}-level interview questions (both technical and behavioral). "
         "Customize the questions based on the candidate’s resume and the role. "
